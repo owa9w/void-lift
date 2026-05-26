@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID LIFT | Nuestros Modelos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .models-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .model-row { display: flex; align-items: center; margin-bottom: 60px; min-height: 400px; background: #0c0c0c; border: 1px solid #1a1a1a; }
+        .model-row:nth-child(even) { flex-direction: row-reverse; }
+        .model-img-placeholder { flex: 1; width: 50%; height: 400px; background-color: #151515; display: flex; align-items: center; justify-content: center; font-weight: bold; letter-spacing: 2px; color: #444; font-size: 1.5rem; }
+        .model-text-box { flex: 1; width: 50%; padding: 50px; }
+        .model-text-box h3 { font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; }
+        .model-text-box p { color: #888; line-height: 1.6; margin-bottom: 20px; }
+        .model-socials { display: flex; gap: 15px; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; }
+        .model-socials a { color: #fff; text-decoration: none; border-bottom: 1px solid #fff; padding-bottom: 2px; }
+        @media(max-width: 768px) { .model-row, .model-row:nth-child(even) { flex-direction: column; } .model-img-placeholder, .model-text-box { width: 100%; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="font-weight:bold; letter-spacing:2px;">VOID LIFT</a></div>
+        <div class="nav-links"><a href="index.html">Inicio</a><a href="productos.html">Tienda Full</a></div>
+    </nav>
+
+    <main class="models-container">
+        <h2 style="text-align:center; letter-spacing:3px; margin-bottom:5px; text-transform:uppercase;">Atletas VOID</h2>
+        <p style="text-align:center; color:#555; margin-bottom:5px; letter-spacing:1px;">Representando la Divinidad Física</p>
+        <hr style="border-color:#111; margin-bottom:50px;">
+
+        <div class="model-row">
+            <div class="model-img-placeholder">ATLETA: MARCUS V.</div>
+            <div class="model-text-box">
+                <h3>Marcus Vance</h3>
+                <p>Especialista en Powerbuilding de alta intensidad. Marcus representa la fuerza bruta y el acondicionamiento extremo del ecosistema VOID LIFT. Su enfoque competitivo encarna la mentalidad de demolición de marcas personales.</p>
+                <div class="model-socials">
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">TIKTOK</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-row">
+            <div class="model-img-placeholder">ATLETA: VALERIE K.</div>
+            <div class="model-text-box">
+                <h3>Valerie Kross</h3>
+                <p>Atleta de Figura de Élite. Valerie integra la estética arquitectónica y simétrica perfecta con el rendimiento de cargas pesadas. Diseñadora de rutinas metabólicas avanzadas bajo condiciones críticas.</p>
+                <div class="model-socials">
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">YOUTUBE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-row">
+            <div class="model-img-placeholder">ATLETA: DARIEN Z.</div>
+            <div class="model-text-box">
+                <h3>Darien Zarek</h3>
+                <p>Referente del Culturismo Clásico Subterráneo. Darien ha esculpido su físico bajo disciplinas de volumen extremo. Su lealtad a los cortes oscuros y las compressions Void Tech™ inspira a miles en redes sociales.</p>
+                <div class="model-socials">
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">TWITCH</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

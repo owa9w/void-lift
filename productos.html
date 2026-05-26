@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID LIFT | Tienda Full</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="font-weight:bold; letter-spacing:2px;">VOID LIFT</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            
+            <div class="dropdown">
+                <a href="productos.html" class="dropdown-trigger">Tienda Full ▾</a>
+                <div class="dropdown-content">
+                    <a href="productos.html#ropa" onclick="filtrarCategoria('ropa')">ROPA</a>
+                    <a href="productos.html#suplementos" onclick="filtrarCategoria('suplementos')">SUPLEMENTOS</a>
+                    <a href="productos.html#accesorios" onclick="filtrarCategoria('accesorios')">ACCESORIOS</a>
+                </div>
+            </div>
+            
+            <a href="#">🛒 Carrito</a>
+        </div>
+    </nav>
+
+    <main class="shop-container">
+        <h2 class="category-title" id="page-title">Catálogo Completo</h2>
+        
+        <div class="product-grid">
+            
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=psychotic-gold">
+                    <div class="product-img-large">PSYCHOTIC GOLD</div>
+                    <span class="item-category">Pre-Workout</span>
+                    <h3 class="item-name">Insane Labz Psychotic Gold (30 Servings)</h3>
+                    <p class="item-price">$44.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=c4-ultimate">
+                    <div class="product-img-large">C4 ULTIMATE</div>
+                    <span class="item-category">Pre-Workout</span>
+                    <h3 class="item-name">Cellucor C4 Ultimate Hardcore</h3>
+                    <p class="item-price">$49.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=total-war">
+                    <div class="product-img-large">TOTAL WAR</div>
+                    <span class="item-category">Pre-Workout</span>
+                    <h3 class="item-name">Redcon1 Total War Signal</h3>
+                    <p class="item-price">$39.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=ryse-godzilla">
+                    <div class="product-img-large">RYSE GODZILLA</div>
+                    <span class="item-category">Pre-Workout</span>
+                    <h3 class="item-name">RYSE x Godzilla Pre-Workout</h3>
+                    <p class="item-price">$56.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=hyde-nightmare">
+                    <div class="product-img-large">HYDE NIGHTMARE</div>
+                    <span class="item-category">Pre-Workout</span>
+                    <h3 class="item-name">ProSupps Hyde Nightmare Extreme</h3>
+                    <p class="item-price">$41.50</p>
+                </a>
+            </div>
+
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=isopure-zero">
+                    <div class="product-img-large">ISOPURE ZERO</div>
+                    <span class="item-category">Proteínas</span>
+                    <h3 class="item-name">Isopure Zero Carb Whey Isolate 3lb</h3>
+                    <p class="item-price">$65.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=gold-standard">
+                    <div class="product-img-large">GOLD STANDARD</div>
+                    <span class="item-category">Proteínas</span>
+                    <h3 class="item-name">ON Gold Standard 100% Whey 5lb</h3>
+                    <p class="item-price">$74.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=nitro-tech">
+                    <div class="product-img-large">NITRO-TECH</div>
+                    <span class="item-category">Proteínas</span>
+                    <h3 class="item-name">MuscleTech Nitro-Tech Pure Whey</h3>
+                    <p class="item-price">$59.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=dymatize-iso100">
+                    <div class="product-img-large">DYMATIZE ISO100</div>
+                    <span class="item-category">Proteínas</span>
+                    <h3 class="item-name">Dymatize ISO100 Hydrolyzed Gourmet</h3>
+                    <p class="item-price">$82.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=syntha-6">
+                    <div class="product-img-large">SYNTHA-6 ULTRA</div>
+                    <span class="item-category">Proteínas</span>
+                    <h3 class="item-name">BSN Syntha-6 Protein Matrix</h3>
+                    <p class="item-price">$52.00</p>
+                </a>
+            </div>
+
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=creapure-void">
+                    <div class="product-img-large">PURE CREAPURE</div>
+                    <span class="item-category">Creatinas</span>
+                    <h3 class="item-name">VOID Creapure Monohydrate 500g</h3>
+                    <p class="item-price">$34.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=creatine-optimum">
+                    <div class="product-img-large">ON CREATINE</div>
+                    <span class="item-category">Creatinas</span>
+                    <h3 class="item-name">Optimum Nutrition Micronized</h3>
+                    <p class="item-price">$29.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=xtend-bcaa">
+                    <div class="product-img-large">XTEND BCAA</div>
+                    <span class="item-category">Aminoácidos</span>
+                    <h3 class="item-name">Xtend BCAA Original Recovery</h3>
+                    <p class="item-price">$27.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=animal-pak">
+                    <div class="product-img-large">ANIMAL PAK</div>
+                    <span class="item-category">Multivitamínicos</span>
+                    <h3 class="item-name">Universal Nutrition Animal Pak</h3>
+                    <p class="item-price">$42.99</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="suplementos">
+                <a href="detalle-producto.html?id=c4-sport">
+                    <div class="product-img-large">C4 CELLUCOR SPORT</div>
+                    <span class="item-category">Pre-Workout</span>
+                    <h3 class="item-name">Cellucor C4 Sport Powder</h3>
+                    <p class="item-price">$24.99</p>
+                </a>
+            </div>
+
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=hoodie-zero">
+                    <div class="product-img-large">hoodie-zero-heavyweight-black.jpg</div>
+                    <span class="item-category">Ropa - Hoodies</span>
+                    <h3 class="item-name">Hoodie Zero Heavyweight Black</h3>
+                    <p class="item-price">$55.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=hoodie-void-gothic">
+                    <div class="product-img-large">void-gothic-oversized-hoodie.jpg</div>
+                    <span class="item-category">Ropa - Hoodies</span>
+                    <h3 class="item-name">Void Gothic Oversized Hoodie</h3>
+                    <p class="item-price">$62.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=zip-up-jacket">
+                    <div class="product-img-large">tech-thermal-zip-up-jacket.jpg</div>
+                    <span class="item-category">Ropa - Hoodies</span>
+                    <h3 class="item-name">Tech Thermal Zip-Up Jacket</h3>
+                    <p class="item-price">$58.50</p>
+                </a>
+            </div>
+
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=compression-void-1">
+                    <div class="product-img-large">void-tech-original-compression.jpg</div>
+                    <span class="item-category">Ropa - Camisas</span>
+                    <h3 class="item-name">Void Tech™ Original Compression</h3>
+                    <p class="item-price">$38.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=compression-dusk">
+                    <div class="product-img-large">compression-long-sleeve-dusk.jpg</div>
+                    <span class="item-category">Ropa - Camisas</span>
+                    <h3 class="item-name">Compression Long Sleeve [DUSK]</h3>
+                    <p class="item-price">$41.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=oversize-eclipse">
+                    <div class="product-img-large">ECLIPSE OVERSIZE</div>
+                    <span class="item-category">Ropa - Camisas</span>
+                    <h3 class="item-name">Eclipse Boxy Oversize Tee</h3>
+                    <p class="item-price">$35.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=oversize-acid">
+                    <div class="product-img-large">acid-wash-vintage-oversize.jpg</div>
+                    <span class="item-category">Ropa - Camisas</span>
+                    <h3 class="item-name">Acid Wash Vintage Oversize</h3>
+                    <p class="item-price">$37.00</p>
+                </a>
+            </div>
+
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=tank-grey">
+                    <div class="product-img-large">tank-top-drop-hole-grey.jpg</div>
+                    <span class="item-category">Ropa - Tank Tops</span>
+                    <h3 class="item-name">Tank Top Drop-Hole Grey</h3>
+                    <p class="item-price">$32.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=maiden-beater">
+                    <div class="product-img-large">maiden-beater-ribbed-tank-2-pack.jpg</div>
+                    <span class="item-category">Ropa - Tank Tops</span>
+                    <h3 class="item-name">Maiden Beater Ribbed Tank [2-Pack]</h3>
+                    <p class="item-price">$50.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=stringer-gothic">
+                    <div class="product-img-large">hardcore-stringer-void-edition.jpg</div>
+                    <span class="item-category">Ropa - Tank Tops</span>
+                    <h3 class="item-name">Hardcore Stringer Void Edition</h3>
+                    <p class="item-price">$28.00</p>
+                </a>
+            </div>
+
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=baggy-jogger-black">
+                    <div class="product-img-large">heavyweight-baggy-jogger-black.jpg</div>
+                    <span class="item-category">Ropa - Pantalones</span>
+                    <h3 class="item-name">Heavyweight Baggy Jogger Black</h3>
+                    <p class="item-price">$48.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=tech-joggers">
+                    <div class="product-img-large">tech-fit-tapered-joggers.jpg</div>
+                    <span class="item-category">Ropa - Pantalones</span>
+                    <h3 class="item-name">Tech Fit Tapered Joggers</h3>
+                    <p class="item-price">$45.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="ropa">
+                <a href="detalle-producto.html?id=mesh-shorts">
+                    <div class="product-img-large">void-mesh-5-shorts-heavy.jpg</div>
+                    <span class="item-category">Ropa - Pantalones</span>
+                    <h3 class="item-name">Void Mesh 5" Shorts Heavy</h3>
+                    <p class="item-price">$32.00</p>
+                </a>
+            </div>
+
+            <div class="product-item" data-category="accesorios">
+                <a href="detalle-producto.html?id=distressed-cap">
+                    <div class="product-img-large">DISTRESSED CAP</div>
+                    <span class="item-category">Accesorios</span>
+                    <h3 class="item-name">Distressed Gothic Gym Cap</h3>
+                    <p class="item-price">$25.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="accesorios">
+                <a href="detalle-producto.html?id=lifting-straps">
+                    <div class="product-img-large">LIFTING STRAPS</div>
+                    <span class="item-category">Accesorios</span>
+                    <h3 class="item-name">Premium Canvas Lifting Straps</h3>
+                    <p class="item-price">$18.00</p>
+                </a>
+            </div>
+            <div class="product-item" data-category="accesorios">
+                <a href="detalle-producto.html?id=gym-bag">
+                    <div class="product-img-large">VOID DUFFLE BAG</div>
+                    <span class="item-category">Accesorios</span>
+                    <h3 class="item-name">Hardcore Matte Duffle Bag</h3>
+                    <p class="item-price">$45.00</p>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+    function filtrarCategoria(categoria) {
+        const productos = document.querySelectorAll('.product-item');
+        const titulo = document.getElementById('page-title');
+
+        // Modifica el título de forma elegante según la selección
+        if (categoria === 'all') {
+            titulo.innerText = "Catálogo Completo VOID LIFT";
+        } else {
+            titulo.innerText = "Colección " + categoria.toUpperCase();
+        }
+
+        // Esconde o muestra usando display: flex con prioridad important
+        productos.forEach(producto => {
+            const catProducto = producto.getAttribute('data-category');
+            if (categoria === 'all' || catProducto === categoria) {
+                producto.style.setProperty('display', 'flex', 'important');
+            } else {
+                producto.style.setProperty('display', 'none', 'important');
+            }
+        });
+    }
+
+    // Ejecución inicial al cargar la página en base al hash (#) de la URL
+    window.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash.replace('#', '');
+        if (hash === 'ropa' || hash === 'suplementos' || hash === 'accesorios') {
+            filtrarCategoria(hash);
+        } else {
+            filtrarCategoria('all');
+        }
+    });
+
+    // Cambia el filtro inmediatamente si el usuario hace clic dentro de la tienda
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) filtrarCategoria(hash);
+    });
+    </script>
+
+</body>
+</html>

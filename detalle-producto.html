@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID LIFT | Detalle de Producto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="font-weight:bold; letter-spacing:2px;">VOID LIFT</a></div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Tienda Full</a>
+            <a href="carrito.html">🛒 Carrito (<span id="cart-count">0</span>)</a>
+        </div>
+    </nav>
+
+    <section class="detail-container">
+        <div class="detail-grid">
+            
+            <div class="detail-img-box" id="product-image">
+                CARGANDO...
+            </div>
+
+            <div class="detail-info-box">
+                <span class="detail-cat" id="product-category">Colección Premium</span>
+                <h1 class="detail-title" id="product-name">Nombre del Producto</h1>
+                <p class="detail-price" id="product-price">$0.00</p>
+                
+                <div class="purchase-buttons">
+                    <button class="btn-buy-now" onclick="comprarAhora()">Comprar Ahora</button>
+                    <button class="btn-add-cart" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+                </div>
+
+                <div class="info-accordion">
+                    <div class="accordion-item">
+                        <h3>📋 Especificaciones del Producto</h3>
+                        <p>Diseñado bajo altos estándares de rendimiento para atletas de alto nivel. Materiales de alta resistencia térmica o compuestos puros micronizados de óptima absorción biológica.</p>
+                    </div>
+                    <div class="accordion-item">
+                        <h3>🚚 Costos y Tiempos de Envío</h3>
+                        <p>Envío nacional estándar express: $5.00 (Gratis en compras superiores a $90.00). Despachos rápidos en 24-48 horas con número de seguimiento.</p>
+                    </div>
+                    <div class="accordion-item">
+                        <h3>⭐ Reseñas de Clientes (4.9/5)</h3>
+                        <p class="review"><strong>Carlos M.</strong> - "El ajuste es perfecto y la calidad en entrenamiento pesado se nota excelente. Compra recomendada."</p>
+                        <p class="review"><strong>Andrés R.</strong> - "Llegó super rápido. Viene completamente sellado con altos controles de calidad."</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Simulador de base de datos de precios y nombres para que coincida con los 30 productos anteriores
+        const database = {
+            'psychotic-gold': { name: 'Insane Labz Psychotic Gold', price: 44.99, cat: 'Pre-Workout' },
+            'c4-ultimate': { name: 'Cellucor C4 Ultimate Hardcore', price: 49.99, cat: 'Pre-Workout' },
+            'total-war': { name: 'Redcon1 Total War Signal', price: 39.99, cat: 'Pre-Workout' },
+            'ryse-godzilla': { name: 'RYSE x Godzilla Pre-Workout', price: 56.99, cat: 'Pre-Workout' },
+            'hyde-nightmare': { name: 'ProSupps Hyde Nightmare Extreme', price: 41.50, cat: 'Pre-Workout' },
+            'isopure-zero': { name: 'Isopure Zero Carb Whey Isolate 3lb', price: 65.99, cat: 'Proteínas' },
+            'gold-standard': { name: 'ON Gold Standard 100% Whey 5lb', price: 74.99, cat: 'Proteínas' },
+            'nitro-tech': { name: 'MuscleTech Nitro-Tech Pure Whey', price: 59.99, cat: 'Proteínas' },
+            'dymatize-iso100': { name: 'Dymatize ISO100 Hydrolyzed Gourmet', price: 82.99, cat: 'Proteínas' },
+            'syntha-6': { name: 'BSN Syntha-6 Protein Matrix', price: 52.00, cat: 'Proteínas' },
+            'creapure-void': { name: 'VOID Creapure Monohydrate 500g', price: 34.99, cat: 'Creatinas' },
+            'creatine-optimum': { name: 'Optimum Nutrition Micronized', price: 29.99, cat: 'Creatinas' },
+            'xtend-bcaa': { name: 'Xtend BCAA Original Recovery', price: 27.99, cat: 'Aminoácidos' },
+            'animal-pak': { name: 'Universal Nutrition Animal Pak', price: 42.99, cat: 'Multivitamínicos' },
+            'c4-sport': { name: 'Cellucor C4 Sport Powder', price: 24.99, cat: 'Pre-Workout' },
+            'hoodie-zero': { name: 'Hoodie Zero Heavyweight Black', price: 55.00, cat: 'Ropa - Hoodies' },
+            'hoodie-void-gothic': { name: 'Void Gothic Oversized Hoodie', price: 62.00, cat: 'Ropa - Hoodies' },
+            'zip-up-jacket': { name: 'Tech Thermal Zip-Up Jacket', price: 58.50, cat: 'Ropa - Hoodies' },
+            'compression-void-1': { name: 'Void Tech™ Original Compression', price: 38.00, cat: 'Ropa - Camisas' },
+            'compression-dusk': { name: 'Compression Long Sleeve [DUSK]', price: 41.00, cat: 'Ropa - Camisas' },
+            'oversize-eclipse': { name: 'Eclipse Boxy Oversize Tee', price: 35.00, cat: 'Ropa - Camisas' },
+            'oversize-acid': { name: 'Acid Wash Vintage Oversize', price: 37.00, cat: 'Ropa - Camisas' },
+            'tank-grey': { name: 'Tank Top Drop-Hole Grey', price: 32.00, cat: 'Ropa - Tank Tops' },
+            'maiden-beater': { name: 'Maiden Beater Ribbed Tank [2-Pack]', price: 50.00, cat: 'Ropa - Tank Tops' },
+            'stringer-gothic': { name: 'Hardcore Stringer Void Edition', price: 28.00, cat: 'Ropa - Tank Tops' },
+            'baggy-jogger-black': { name: 'Heavyweight Baggy Jogger Black', price: 48.00, cat: 'Ropa - Pantalones' },
+            'tech-joggers': { name: 'Tech Fit Tapered Joggers', price: 45.00, cat: 'Ropa - Pantalones' },
+            'mesh-shorts': { name: 'Void Mesh 5" Shorts Heavy', price: 32.00, cat: 'Ropa - Pantalones' },
+            'distressed-cap': { name: 'Distressed Gothic Gym Cap', price: 25.00, cat: 'Accesorios' },
+            'lifting-straps': { name: 'Premium Canvas Lifting Straps', price: 18.00, cat: 'Accesorios' },
+            'gym-bag': { name: 'Hardcore Matte Duffle Bag', price: 45.00, cat: 'Accesorios' }
+        };
+
+        // Capturar el ID que viene en la URL (?id=...)
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        let currentProduct = database[productId] || { name: "Producto VOID", price: 0.00, cat: "Premium" };
+
+        // Pintar la info en la pantalla
+        document.getElementById('product-name').innerText = currentProduct.name;
+        document.getElementById('product-price').innerText = `$${currentProduct.price.toFixed(2)}`;
+        document.getElementById('product-category').innerText = currentProduct.cat;
+        document.getElementById('product-image').innerText = productId ? productId.toUpperCase().replace(/-/g, ' ') : "VOID LIFT";
+
+        // Función para agregar al almacenamiento interno del navegador
+        function agregarAlCarrito() {
+            let carrito = JSON.parse(localStorage.getItem('void_cart')) || [];
+            
+            // Ver si el producto ya estaba en la lista para sumarle cantidad
+            let itemExistente = carrito.find(item => item.id === productId);
+            if(itemExistente) {
+                itemExistente.quantity += 1;
+            } else {
+                carrito.push({
+                    id: productId,
+                    name: currentProduct.name,
+                    price: currentProduct.price,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('void_cart', JSON.stringify(carrito));
+            actualizarContadorNavbar();
+            alert(`¡${currentProduct.name} se agregó al carrito con éxito!`);
+        }
+
+        function comprarAhora() {
+            agregarAlCarrito();
+            window.location.href = 'carrito.html'; // Te redirige automáticamente a la nueva extensión
+        }
+
+        function actualizarContadorNavbar() {
+            let carrito = JSON.parse(localStorage.getItem('void_cart')) || [];
+            let totalItems = carrito.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalItems;
+        }
+
+        actualizarContadorNavbar();
+    </script>
+</body>
+</html>

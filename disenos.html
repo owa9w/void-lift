@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID LIFT | Nuestros Diseños</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .designs-container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+        /* Cuadro Dominante 1: Visor */
+        .viewer-box { width: 100%; height: 500px; background-color: #0c0c0c; border: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-bottom: 40px; }
+        .viewer-slide { font-size: 2rem; font-weight: bold; letter-spacing: 4px; color: #333; text-align: center; text-transform: uppercase; display: none; }
+        .viewer-slide.active { display: block; }
+        .viewer-btn { position: absolute; background: rgba(0,0,0,0.8); border: 1px solid #222; color: #fff; font-size: 1.5rem; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .viewer-btn:hover { background: #fff; color: #000; border-color: #fff; }
+        .btn-prev { left: 20px; }
+        .btn-next { right: 20px; }
+        
+        /* Cuadro Dominante 2: Historia */
+        .history-box { width: 100%; background-color: #0c0c0c; border: 1px solid #1a1a1a; padding: 50px; box-sizing: border-box; }
+        .history-box h3 { font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase; text-align: center;}
+        .history-box p { color: #aaa; line-height: 1.8; font-size: 1.05rem; text-align: justify; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="font-weight:bold; letter-spacing:2px;">VOID LIFT</a></div>
+        <div class="nav-links"><a href="index.html">Inicio</a><a href="productos.html">Tienda Full</a></div>
+    </nav>
+
+    <main class="designs-container">
+        
+        <div class="viewer-box">
+            <button class="viewer-btn btn-prev" onclick="cambiarSlide(-1)">◀</button>
+            
+            <div class="viewer-slide active">✦ Concepto: Gothic Heavy Tech ✦</div>
+            <div class="viewer-slide">✦ Tipografía Void Tall Custom ✦</div>
+            <div class="viewer-slide">✦ Acabados Acid Wash e Intimidantes ✦</div>
+            
+            <button class="viewer-btn btn-next" onclick="cambiarSlide(1)">▶</button>
+        </div>
+
+        <div class="history-box">
+            <h3>Estética Dark & Intimidante</h3>
+            <p>Nuestros conceptos textiles rompen con el minimalismo colorido e inofensivo de la industria moderna. En VOID LIFT diseñamos para el atleta que no busca pasar desapercibido, sino imponer respeto absoluto desde el momento en que pisa la sala. Inspirados en arquitecturas góticas, tipografías estructuradas y el misticismo del vacío (VOID), cada prenda cuenta con siluetas sobredimensionadas, caídas pesadas antidesgarro y un aura oscura que actúa como una armadura psicológica para tus entrenamientos más pesados. Si buscas ropa deportiva común, estás en el lugar equivocado.</p>
+        </div>
+    </main>
+
+    <script>
+        let slideIndex = 0;
+        function cambiarSlide(direccion) {
+            const slides = document.querySelectorAll('.viewer-slide');
+            slides[slideIndex].classList.remove('active');
+            slideIndex += direccion;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            slides[slideIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>

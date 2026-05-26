@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID LIFT | Tu Carrito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="font-weight:bold; letter-spacing:2px;">VOID LIFT</a></div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Tienda Full</a>
+            <a href="carrito.html" class="active">🛒 Carrito</a>
+        </div>
+    </nav>
+
+    <main class="cart-container">
+        <h2 class="category-title">Tu Carrito de Compras</h2>
+        
+        <div class="cart-layout">
+            <div class="cart-items-list" id="cart-items-container">
+                <p style="color: #666;">El carrito está completamente vacío.</p>
+            </div>
+
+            <div class="cart-summary-box">
+                <h3>Resumen de Pedido</h3>
+                <hr style="border-color: #222; margin: 15px 0;">
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="summary-subtotal">$0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Envío:</span>
+                    <span id="summary-shipping">$0.00</span>
+                </div>
+                <hr style="border-color: #222; margin: 15px 0;">
+                <div class="summary-line total">
+                    <span>Total Estimado:</span>
+                    <span id="summary-total">$0.00</span>
+                </div>
+                
+                <button class="btn-checkout" onclick="alert('¡Procediendo a la pasarela de pago segura!')">Finalizar Compra</button>
+                <button class="btn-clear" onclick="vaciarCarrito()">Vaciar Carrito</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function cargarCarrito() {
+            let carrito = JSON.parse(localStorage.getItem('void_cart')) || [];
+            const container = document.getElementById('cart-items-container');
+            
+            if(carrito.length === 0) {
+                container.innerHTML = `<p style="color: #666; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Tu cesta de compras está vacía.</p>`;
+                actualizarTotales(0);
+                return;
+            }
+
+            container.innerHTML = ''; // Limpiar marcador por defecto
+            let subtotal = 0;
+
+            carrito.forEach((item, index) => {
+                let itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                container.innerHTML += `
+                    <div class="cart-item-row">
+                        <div class="cart-item-img-placeholder">${item.id.toUpperCase().replace(/-/g, ' ')}</div>
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <p class="unit-price">Precio unitario: $${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="cart-item-qty">
+                            <span>Cant: <strong>${item.quantity}</strong></span>
+                        </div>
+                        <div class="cart-item-total-price">
+                            <span>$${itemTotal.toFixed(2)}</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            actualizarTotales(subtotal);
+        }
+
+        function actualizarTotales(subtotal) {
+            let envio = subtotal > 90 || subtotal === 0 ? 0 : 5.00;
+            let total = subtotal + envio;
+
+            document.getElementById('summary-subtotal').innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById('summary-shipping').innerText = envio === 0 ? 'GRATIS' : `$${envio.toFixed(2)}`;
+            document.getElementById('summary-total').innerText = `$${total.toFixed(2)}`;
+        }
+
+        function vaciarCarrito() {
+            localStorage.removeItem('void_cart');
+            cargarCarrito();
+        }
+
+        // Ejecutar al abrir la extensión
+        document.addEventListener('DOMContentLoaded', cargarCarrito);
+    </script>
+</body>
+</html>
