@@ -25,15 +25,9 @@ a {
 
 /* --- FUENTE GÓTICA --- */
 .gothic-text {
-.gothic-brand-logo {
-    /* Cambiamos la fuente local por la de Google Fonts */
-    font-family: 'UnifrakturMaguntia', serif; 
-    font-size: 4.2rem; /* Puedes ajustar un poco el tamaño si lo necesitas */
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 3px;
-    line-height: 1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Un destello sutil */
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 3rem;
+    letter-spacing: 2px;
 }
 
 /* --- BARRA DE NAVEGACIÓN --- */
