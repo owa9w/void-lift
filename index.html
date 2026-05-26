@@ -332,17 +332,17 @@
                 <h3>Atención al Cliente</h3>
                 <div class="social-links">
                     <a href="mailto:soporte@voidlift.com">✉️ soporte@voidlift.com</a>
-                    <a href="#">📞 +57 317 117 2391</a>
-                    <a href="#">🚚 Rastrea tu pedido</a>
-                    <a href="#">🔄 Política de devoluciones</a>
+                    <a href="#"> +57 317 117 2391</a>
+                    <a href="#"> Rastrea tu pedido</a>
+                    <a href="#"> Política de devoluciones</a>
                 </div>
             </div>
 
             <div class="footer-col">
                 <h3>Peticiones y Reclamos</h3>
                 <div class="social-links">
-                    <a href="#">📋 Formulario PQRS</a>
-                    <a href="#">⚖️ Términos y Condiciones</a>
+                    <a href="#"> Formulario PQRS</a>
+                    <a href="#"> Términos y Condiciones</a>
                 </div>
             </div>
         </div>
@@ -363,16 +363,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const track = document.getElementById("main-carousel-track");
     if (!track) return;
 
-    // Clonamos todo el set de los 30 productos para garantizar el flujo infinito sin cortes visuales
+    
     const items = Array.from(track.children);
     items.forEach(item => {
         const clone = item.cloneNode(true);
         track.appendChild(clone);
     });
 
-    // Control del reinicio de animación fluido en CSS
     track.addEventListener('animationiteration', () => {
-        // Mantiene la sincronía perfecta del loop infinito sin saltos bruscos
+        
     });
 });
 </script>
