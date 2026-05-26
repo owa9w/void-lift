@@ -1,7 +1,5 @@
-/* --- 1. FUENTES (Siempre al inicio del archivo) --- */
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
-/* --- 2. RESET Y CONFIGURACIÓN GENERAL --- */
 * {
     margin: 0;
     padding: 0;
@@ -23,14 +21,12 @@ a {
     transition: 0.3s;
 }
 
-/* --- FUENTE GÓTICA --- */
 .gothic-text {
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 3rem;
     letter-spacing: 2px;
 }
 
-/* --- BARRA DE NAVEGACIÓN --- */
 nav {
     background-color: #000;
     border-bottom: 1px solid #333;
@@ -55,7 +51,6 @@ nav {
     color: #fff;
 }
 
-/* --- SECCIÓN 1: TOP HEADER (NOMBRE) --- */
 .header-top {
     background-color: #000000;
     padding: 60px 20px;
@@ -68,7 +63,6 @@ nav {
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
 }
 
-/* --- SECCIÓN 2: CARRUSEL PRODUCTOS TOP --- */
 .carousel-section {
     padding: 40px 0;
     background-color: #111;
@@ -85,15 +79,12 @@ nav {
     letter-spacing: 3px;
 }
 
-/* Animación de carrusel infinito corregida con los márgenes */
 .carousel-track {
     display: flex;
-    /* Ancho total: (250px de tarjeta + 20px de márgenes) multiplicado por las 10 tarjetas totales */
     width: calc((250px + 20px) * 10); 
     animation: scroll 20s linear infinite;
 }
 
-/* Pausa el carrusel cuando el usuario pasa el mouse por encima (Opcional, pero genial) */
 .carousel-track:hover {
     animation-play-state: paused;
 }
@@ -102,10 +93,10 @@ nav {
     width: 250px;
     height: 350px;
     background: #1a1a1a;
-    margin: 0 10px; /* Altera el ancho real a 270px */
+    margin: 0 10px; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Mejor distribución interna */
+    justify-content: space-between; 
     align-items: center;
     padding: 20px;
     border: 1px solid #333;
@@ -129,14 +120,12 @@ nav {
     font-size: 0.8rem;
 }
 
-/* Ajuste matemático en el translate del Keyframe */
+
 @keyframes scroll {
     0% { transform: translateX(0); }
-    /* Se debe mover exactamente el ancho de los 5 productos únicos para el bucle infinito */
     100% { transform: translateX(calc((-250px - 20px) * 5)); } 
 }
 
-/* --- SECCIÓN 3: FOOTER --- */
 footer {
     background-color: #050505;
     border-top: 1px solid #333;
@@ -170,10 +159,9 @@ footer {
 
 .social-links a:hover {
     color: #fff;
-    padding-left: 5px; /* Efecto sutil de desplazamiento al pasar el mouse */
+    padding-left: 5px;
 }
 
-/* --- NUEVA CONFIGURACIÓN HORIZONTAL DE LA TIENDA --- */
 .shop-container {
     max-width: 1200px !important;
     margin: 50px auto !important;
